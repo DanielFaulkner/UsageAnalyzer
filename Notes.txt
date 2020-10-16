@@ -1,0 +1,24 @@
+Logon Recorder (on which UsageAnalyzer is based) Version 0.6:
+
+Records student logons and saves them to an SQL database accessable by a browser.
+
+The computer and user name are collected by 2 scripts which need to be added to the group policy logon/logoff scripts.
+logoff.vbs / logon.vbs - Contain 3 variables which can be edited, server location, number of attempts and log file location.
+
+The information is received by a webpage on the server record.php and then saved into an sql database.
+
+The SQL database can be accessed though a front end on the index.php page. This allows searching by user and computer and limited filtering by date.
+
+The remaining files contain functions which shouldn't be accessed directly, except for setup.php which should only be run to create a new database.
+
+Features that may appear in a later version/unfinished:
+Setting a maximum database size.
+Login page to optionally secure the page and prevent access by unauthorised users.
+
+Todo:
+Filter out the domain part of the username and prevent it being entered into the database (or entered in a different field)
+
+Add audit information gathering on request.
+Add WEI (benchmark) gathering on request (inc variable to trigger a benchmark or not if not previously run).
+Generate utilisation figures by comparing where in the WEI/Usage list each item comes. +/- diff.
+Helpdesk/Fault tracker?
